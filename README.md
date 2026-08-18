@@ -183,10 +183,20 @@ The server runs on port 3000 by default. Set the `PORT` environment variable to 
 
 ---
 
-## License
+---
 
-Copyright (c) 2025 Sampath Malleboina. All rights reserved.
+##  License
 
-This project and its source code are the intellectual property of Sampath Malleboina. Unauthorized copying, distribution, modification, or use of this software, in whole or in part, without explicit written permission from the author is strictly prohibited.
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
-For licensing inquiries, contact the author directly.
+---
+
+##  Author
+
+**Sampath Malleboina**
+
+---
+
+<div align="center">
+<sub>Built with using HTML, CSS, JavaScript, Node.Js, MAPS</sub>
+</div>
