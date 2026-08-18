@@ -1,0 +1,462 @@
+[
+  {
+    "issueType": "pollution",
+    "description": "we are facing pollution",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744047457875.png",
+    "submittedAt": "2025-04-07T17:37:37.882Z"
+  },
+  {
+    "issueType": "pollution",
+    "description": "we are facing pollution",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744048093538.png",
+    "submittedAt": "2025-04-07T17:48:13.549Z"
+  },
+  {
+    "issueType": "pollution",
+    "description": "kjnsc xm,c ",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744048315465.png",
+    "submittedAt": "2025-04-07T17:51:55.482Z"
+  },
+  {
+    "issueType": "water shortage",
+    "description": "water shortage",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744051118531.png",
+    "submittedAt": "2025-04-07T18:38:38.543Z"
+  },
+  {
+    "issueType": "Scarcity",
+    "description": "scarcity",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744051245247.png",
+    "submittedAt": "2025-04-07T18:40:45.260Z"
+  },
+  {
+    "issueType": "Scarcity",
+    "description": "trxgf",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744051332589.png",
+    "submittedAt": "2025-04-07T18:42:12.600Z"
+  },
+  {
+    "issueType": "water shortage",
+    "description": "shortage",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744051833468.png",
+    "submittedAt": "2025-04-07T18:50:33.480Z"
+  },
+  {
+    "issueType": "water shortage",
+    "description": "shortage",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744052666497.png",
+    "submittedAt": "2025-04-07T19:04:26.508Z"
+  },
+  {
+    "issueType": "water shortage",
+    "description": "shortage",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744052670572.png",
+    "submittedAt": "2025-04-07T19:04:30.580Z"
+  },
+  {
+    "issueType": "Scarcity",
+    "description": "We are facing water scaercity in our arae",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744053084667.png",
+    "submittedAt": "2025-04-07T19:11:24.681Z"
+  },
+  {
+    "issueType": "water shortage",
+    "description": "Water Shortage",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744077841211.png",
+    "submittedAt": "2025-04-08T02:04:01.228Z"
+  },
+  {
+    "issueType": "pollution",
+    "description": "we are faceing water poll",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744086313723.png",
+    "submittedAt": "2025-04-08T04:25:13.738Z"
+  },
+  {
+    "issueType": "pollution",
+    "description": "we are faceing water poll",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744086314664.png",
+    "submittedAt": "2025-04-08T04:25:14.670Z"
+  },
+  {
+    "issueType": "pollution",
+    "description": "we are faceing water poll",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744086315231.png",
+    "submittedAt": "2025-04-08T04:25:15.252Z"
+  },
+  {
+    "issueType": "pollution",
+    "description": "we are faceing water poll",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744086318319.png",
+    "submittedAt": "2025-04-08T04:25:18.326Z"
+  },
+  {
+    "issueType": "pollution",
+    "description": "we are faceing water poll",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744086318970.png",
+    "submittedAt": "2025-04-08T04:25:18.974Z"
+  },
+  {
+    "issueType": "pollution",
+    "description": "we are faceing water poll",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744086319128.png",
+    "submittedAt": "2025-04-08T04:25:19.133Z"
+  },
+  {
+    "issueType": "pollution",
+    "description": "we are faceing water poll",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744086327575.png",
+    "submittedAt": "2025-04-08T04:25:27.583Z"
+  },
+  {
+    "issueType": "pollution",
+    "description": "we are faceing water poll",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744086330209.png",
+    "submittedAt": "2025-04-08T04:25:30.217Z"
+  },
+  {
+    "issueType": "water shortage",
+    "description": "nothing",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744104523175.png",
+    "submittedAt": "2025-04-08T09:28:43.188Z"
+  },
+  {
+    "issueType": "water shortage",
+    "description": "nothing",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744104524932.png",
+    "submittedAt": "2025-04-08T09:28:44.946Z"
+  },
+  {
+    "issueType": "water shortage",
+    "description": "nothing",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744104526035.png",
+    "submittedAt": "2025-04-08T09:28:46.047Z"
+  },
+  {
+    "issueType": "water shortage",
+    "description": "nothing",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744104526240.png",
+    "submittedAt": "2025-04-08T09:28:46.256Z"
+  },
+  {
+    "issueType": "water shortage",
+    "description": "nothing",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744104529198.png",
+    "submittedAt": "2025-04-08T09:28:49.208Z"
+  },
+  {
+    "issueType": "water leakage at kushaiguda",
+    "description": "adfsasd",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744179023814.png",
+    "submittedAt": "2025-04-09T06:10:23.826Z"
+  },
+  {
+    "issueType": "water leakage at kushaiguda",
+    "description": "adfsasd",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744179028040.png",
+    "submittedAt": "2025-04-09T06:10:28.048Z"
+  },
+  {
+    "issueType": "water leakage at kushaiguda",
+    "description": "adfsasd",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744179033388.png",
+    "submittedAt": "2025-04-09T06:10:33.406Z"
+  },
+  {
+    "issueType": "water leakage at kushaiguda",
+    "description": "adfsasd",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744179039015.png",
+    "submittedAt": "2025-04-09T06:10:39.022Z"
+  },
+  {
+    "issueType": "water leakage at kushaiguda",
+    "description": "adfsasd",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744179039176.png",
+    "submittedAt": "2025-04-09T06:10:39.184Z"
+  },
+  {
+    "issueType": "water leakage at kushaiguda",
+    "description": "adfsasd",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744179039314.png",
+    "submittedAt": "2025-04-09T06:10:39.319Z"
+  },
+  {
+    "issueType": "water leakage at kushaiguda",
+    "description": "adfsasd",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744179043183.png",
+    "submittedAt": "2025-04-09T06:10:43.187Z"
+  },
+  {
+    "issueType": "water leakage at kushaiguda",
+    "description": "jhjxhgfv",
+    "location": {
+      "latitude": "17.352687388712816",
+      "longitude": "78.55099852082488"
+    },
+    "image": "/uploads/1744179714541.png",
+    "submittedAt": "2025-04-09T06:21:54.545Z"
+  },
+  {
+    "issueType": "water leakage at kushaiguda",
+    "description": "jhjxhgfv",
+    "location": {
+      "latitude": "17.352687388712816",
+      "longitude": "78.55099852082488"
+    },
+    "image": "/uploads/1744179723361.png",
+    "submittedAt": "2025-04-09T06:22:03.368Z"
+  },
+  {
+    "issueType": "water shortage",
+    "description": "we are facing water shortage",
+    "location": {
+      "latitude": "17.352687388712816",
+      "longitude": "78.55099852082488"
+    },
+    "image": "/uploads/1744181492119.png",
+    "submittedAt": "2025-04-09T06:51:32.132Z"
+  },
+  {
+    "issueType": "water shortage",
+    "description": "we are facing water shortage",
+    "location": {
+      "latitude": "17.352687388712816",
+      "longitude": "78.55099852082488"
+    },
+    "image": "/uploads/1744181507070.png",
+    "submittedAt": "2025-04-09T06:51:47.077Z"
+  },
+  {
+    "issueType": "water shortage",
+    "description": "we are facing water shortage",
+    "location": {
+      "latitude": "17.352687388712816",
+      "longitude": "78.55099852082488"
+    },
+    "image": "/uploads/1744181508167.png",
+    "submittedAt": "2025-04-09T06:51:48.191Z"
+  },
+  {
+    "issueType": "water leakage at kushaiguda",
+    "description": "we are facing water leckage",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744182007849.jpeg",
+    "submittedAt": "2025-04-09T07:00:07.861Z"
+  },
+  {
+    "issueType": "Scarcity",
+    "description": "we are facing scarcity in our area",
+    "location": {
+      "latitude": "17.39364°",
+      "longitude": "80.32203°"
+    },
+    "image": "/uploads/1744183561445.jpeg",
+    "submittedAt": "2025-04-09T07:26:01.452Z"
+  },
+  {
+    "issueType": "pollution",
+    "description": "agadgf",
+    "location": {
+      "latitude": "17.405307",
+      "longitude": "78.621117"
+    },
+    "image": "/uploads/1744626034496.jpeg",
+    "submittedAt": "2025-04-14T10:20:34.499Z"
+  },
+  {
+    "issueType": "pollution",
+    "description": "agadgf",
+    "location": {
+      "latitude": "17.405307",
+      "longitude": "78.621117"
+    },
+    "image": "/uploads/1744626036938.jpeg",
+    "submittedAt": "2025-04-14T10:20:36.940Z"
+  },
+  {
+    "issueType": "pollution",
+    "description": "we are facing pollution",
+    "location": {
+      "latitude": "17.415877",
+      "longitude": "78.630156"
+    },
+    "image": "/uploads/1744626684864.jpeg",
+    "submittedAt": "2025-04-14T10:31:24.868Z"
+  },
+  {
+    "issueType": "water shortage",
+    "description": "We are facing the Water shortage in our area",
+    "location": {
+      "latitude": "17.415897",
+      "longitude": "78.630180"
+    },
+    "image": "/uploads/1744626845878.jpeg",
+    "submittedAt": "2025-04-14T10:34:05.881Z"
+  },
+  {
+    "issueType": "sewage water ",
+    "description": "Problem in sewage water",
+    "location": {
+      "latitude": "17.415782",
+      "longitude": "78.630183"
+    },
+    "image": "/uploads/1744627161817.jpeg",
+    "submittedAt": "2025-04-14T10:39:21.824Z"
+  },
+  {
+    "issueType": "sewage water ",
+    "description": "sewage",
+    "location": {
+      "latitude": "17.415874",
+      "longitude": "78.630047"
+    },
+    "image": "/uploads/1744627380782.jpeg",
+    "submittedAt": "2025-04-14T10:43:00.787Z"
+  },
+  {
+    "issueType": "pollution",
+    "description": "We are facing water pollution in our area.",
+    "location": {
+      "latitude": "17.414926",
+      "longitude": "78.630309"
+    },
+    "image": "/uploads/1749898604153.png",
+    "submittedAt": "2025-06-14T10:56:44.169Z"
+  },
+  {
+    "issueType": "pollution",
+    "description": "WE are facing pollution in our area",
+    "location": {
+      "latitude": "17.410827",
+      "longitude": "78.630444"
+    },
+    "image": "/uploads/1749985239651.jpeg",
+    "submittedAt": "2025-06-15T11:00:39.655Z"
+  }
+]

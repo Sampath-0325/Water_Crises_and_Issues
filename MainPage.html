@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Crisis Reporting Platform</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .water-drop {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: fall 4s linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-100vh); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            animation: shine 4s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .logo-container {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        #logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            border: 3px solid rgba(102, 126, 234, 0.2);
+            background: white;
+            padding: 3px;
+            transition: all 0.3s ease;
+        }
+
+        #logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-content {
+            flex: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin: 0 0 1rem 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .header-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin: 0 0 1rem 0;
+            font-weight: 500;
+            background: rgba(102, 126, 234, 0.1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 15px;
+            border-left: 3px solid #667eea;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        /* Button Styles */
+        .button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .button:hover::before {
+            left: 100%;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Main Content */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem 0;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+            animation: borderFlow 3s linear infinite;
+        }
+
+        @keyframes borderFlow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .section h2 {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* Video Container */
+        .video-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .video-container iframe {
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            max-width: 100%;
+        }
+
+        .video-container iframe:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Image Gallery */
+        .image-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .image-item {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .image-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-item img {
+            width: 100%;
+            max-width: 400px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .image-item p {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        /* Navigation */
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.9);
+            color: #667eea;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-btn:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .main-container { padding: 1rem; }
+            .section { padding: 2rem; }
+            .image-row { grid-template-columns: 1fr; }
+            .nav-buttons { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation" id="bgAnimation"></div>
+
+    <header>
+        <div class="logo-container">
+            <img src="https://thumbs.dreamstime.com/z/water-logo-design-pure-water-logo-vector-inspiration-183507312.jpg" 
+                 alt="Water Logo" id="logo">
+        </div>
+        <div class="header-content">
+            <h1>Water Crisis Reporting Platform</h1>
+            <div class="header-subtitle">
+                <i class="fas fa-exclamation-triangle"></i> Report water-related issues and help make a difference
+            </div>
+            <div style="margin-top: 2rem;">
+                <a href="report.html" class="button">
+                    <i class="fas fa-plus-circle"></i> Report an Issue
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- About Section -->
+        <div class="section">
+            <h2><i class="fas fa-info-circle"></i> About the Platform</h2>
+            <p>This platform allows you to report water-related issues like scarcity, pollution, or 
+                infrastructure damage. Not only for reporting water-related problems, but you can 
+                also learn how to use and how to maintain water in your daily life.
+            </p>
+            
+            <div class="video-container">
+                <iframe width="700" height="400" src="https://www.youtube.com/embed/dEmYud2wGlc" 
+                    title="How We Use Water" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                    encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy=
+                    "strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Water Importance Section -->
+        <div class="section">
+            <h2><i class="fas fa-tint"></i> More About Water Importance</h2>
+            <p>Water is essential for life. Every living organism on Earth depends on water to survive. Here's why water is so important:</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                <div style="background: rgba(102, 126, 234, 0.1); padding: 1.5rem; border-radius: 15px; border-left: 4px solid #667eea;">
+                    <h3><i class="fas fa-heart"></i> Survival</h3>
+                    <p>Our bodies are made up of about 60% water. We need it to regulate temperature, transport nutrients, and remove waste.</p>
+                </div>
+                <div style="background: rgba(102, 126, 234, 0.1); padding: 1.5rem; border-radius: 15px; border-left: 4px solid #667eea;">
+                    <h3><i class="fas fa-seedling"></i> Agriculture</h3>
+                    <p>Crops and livestock rely on clean water to grow and thrive, which supports global food production.</p>
+                </div>
+                <div style="background: rgba(102, 126, 234, 0.1); padding: 1.5rem; border-radius: 15px; border-left: 4px solid #667eea;">
+                    <h3><i class="fas fa-shield-alt"></i> Health & Hygiene</h3>
+                    <p>Clean water is vital for hygiene — for drinking, cooking, washing, and preventing diseases.</p>
+                </div>
+                
+            </div>
+
+            <div class="video-container">
+                <iframe width="928" height="522" src="https://www.youtube.com/embed/rEJ5yuFR3f8" 
+                    title="Water Water Everywhere | Learn All About Water For Kids" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Water Pollution Section -->
+        <div class="section">
+            <h2><i class="fas fa-ban"></i> How to Reduce Water Pollution</h2>
+            <p>Learn about the devastating effects of water pollution and how we can work together to protect our water sources.</p>
+            
+            <div class="video-container">
+                <iframe width="928" height="522" src="https://www.youtube.com/embed/ICg5uTnraHU" 
+                    title="7 Ways To Reduce Water Pollution (Eco-Friendly Lifestyle)" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;
+                     web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Awareness Images Section -->
+        <div class="section">
+            <h2><i class="fas fa-images"></i> Water Conservation Awareness</h2>
+            <p>Below images clearly depict the overall importance of water conservation and environmental protection.</p>
+            
+            <div class="image-row">
+                <div class="image-item">
+                    <img src="https://thedharmatrails.com/wp-content/uploads/2020/10/save-water-quotes-800x1200.jpg" 
+                         alt="Water Conservation">
+                    <p>💧 Save Water – Every Drop Counts</p>
+                </div>
+                <div class="image-item">
+                    <img src="https://img.freepik.com/premium-photo/celebrating-world-water-day-raising-awareness-promoting-sustainable-water-management-advocating-access-clean-water-all-collective-action-healthier-planet-brighter-future_771426-52634.jpg" 
+                         alt="Clean Water Source">
+                    <p>🌊 Clean Water for All</p>
+                </div>
+                <div class="image-item">
+                    <img src="https://faircado.com/wp-content/uploads/2022/09/image-9-1024x768.png" 
+                         alt="Water Pollution">
+                    <p>🚫 Stop Water Pollution</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Section -->
+        <div class="section">
+            <h2><i class="fas fa-compass"></i> Quick Navigation</h2>
+            <div class="nav-buttons">
+                <a href="report.html" class="nav-btn">
+                    <i class="fas fa-plus-circle"></i> Report Issue
+                </a>
+                <a href="index.html" class="nav-btn">
+                    <i class="fas fa-home"></i> Back to Home
+                </a>
+               
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create animated background
+        function createWaterDrops() {
+            const bgAnimation = document.getElementById('bgAnimation');
+            for (let i = 0; i < 20; i++) {
+                const drop = document.createElement('div');
+                drop.className = 'water-drop';
+                drop.style.left = Math.random() * 100 + '%';
+                drop.style.animationDelay = Math.random() * 4 + 's';
+                drop.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                bgAnimation.appendChild(drop);
+            }
+        }
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            createWaterDrops();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Water Crisis Awareness Platform</title>
+        <link rel="stylesheet" href="styles1.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                min-height: 100vh;
+                overflow-x: hidden;
+            }
+
+            /* Animated Background */
+            .bg-animation {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                opacity: 0.1;
+            }
+
+            .water-drop {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 50%;
+                animation: fall 3s linear infinite;
+            }
+
+            @keyframes fall {
+                0% { transform: translateY(-100vh); opacity: 1; }
+                100% { transform: translateY(100vh); opacity: 0; }
+            }
+
+            /* Header Styles */
+            header {
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                padding: 2rem 2rem;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+                position: relative;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+            }
+
+            header::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+                animation: shine 4s infinite;
+            }
+
+            @keyframes shine {
+                0% { left: -100%; }
+                100% { left: 100%; }
+            }
+
+            .logo-container {
+                position: relative;
+                display: inline-block;
+                margin-bottom: 1rem;
+            }
+
+            #logo {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+                border: 3px solid rgba(102, 126, 234, 0.2);
+                background: white;
+                padding: 3px;
+                transition: all 0.3s ease;
+            }
+
+            #logo:hover {
+                transform: scale(1.1);
+                box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+            }
+
+            .header-content {
+                flex: 1;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            h1 {
+                background: linear-gradient(45deg, #667eea, #764ba2);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                font-size: 2.8rem;
+                font-weight: bold;
+                margin: 0 0 1rem 0;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+
+            .header-subtitle {
+                font-size: 1.2rem;
+                color: #666;
+                margin: 0;
+                font-weight: 500;
+                background: rgba(102, 126, 234, 0.1);
+                padding: 0.8rem 1.5rem;
+                border-radius: 15px;
+                border-left: 3px solid #667eea;
+                display: inline-block;
+                text-align: center;
+            }
+
+            .header-actions {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+            }
+
+            .header-message {
+                font-size: 1.2rem;
+                color: #666;
+                margin-top: 1rem;
+                font-weight: 500;
+                background: rgba(102, 126, 234, 0.1);
+                padding: 0.8rem 1.5rem;
+                border-radius: 15px;
+                border-left: 3px solid #667eea;
+                display: inline-block;
+            }
+
+            .header-decoration {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 200px;
+                height: 200px;
+                border: 2px solid rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                animation: rotate 20s linear infinite;
+                z-index: 1;
+            }
+
+            .header-decoration::before {
+                content: '';
+                position: absolute;
+                top: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 20px;
+                height: 20px;
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 50%;
+            }
+
+            @keyframes rotate {
+                from { transform: translate(-50%, -50%) rotate(0deg); }
+                to { transform: translate(-50%, -50%) rotate(360deg); }
+            }
+
+            /* Main Content */
+            .main-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 2rem;
+            }
+
+            .hero-section {
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                padding: 3rem;
+                margin: 2rem 0;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .hero-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+                animation: borderFlow 3s linear infinite;
+            }
+
+            @keyframes borderFlow {
+                0% { transform: translateX(-100%); }
+                100% { transform: translateX(100%); }
+            }
+
+            .hero-image {
+                width: 100%;
+                max-width: 600px;
+                height: 400px;
+                object-fit: cover;
+                border-radius: 20px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+                transition: all 0.5s ease;
+                cursor: pointer;
+                margin: 2rem 0;
+            }
+
+            .hero-image:hover {
+                transform: scale(1.05) rotate(2deg);
+                box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            }
+
+            .hero-text {
+                font-size: 1.2rem;
+                line-height: 1.8;
+                color: #333;
+                margin: 2rem 0;
+                padding: 0 2rem;
+            }
+
+            /* Interactive Cards */
+            .cards-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                margin: 3rem 0;
+            }
+
+            .info-card {
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                padding: 2rem;
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+                cursor: pointer;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .info-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(45deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+                transform: translateX(-100%);
+                transition: transform 0.6s ease;
+            }
+
+            .info-card:hover::before {
+                transform: translateX(100%);
+            }
+
+            .info-card:hover {
+                transform: translateY(-10px) scale(1.02);
+                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            }
+
+            .card-icon {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+                background: linear-gradient(45deg, #667eea, #764ba2);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+
+            .card-title {
+                font-size: 1.5rem;
+                font-weight: bold;
+                margin-bottom: 1rem;
+                color: #333;
+            }
+
+            .card-content {
+                color: #666;
+                line-height: 1.6;
+            }
+
+            /* Interactive Buttons */
+            .action-buttons {
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+                margin: 3rem 0;
+                flex-wrap: wrap;
+            }
+
+            .btn {
+                padding: 1rem 2rem;
+                border: none;
+                border-radius: 50px;
+                font-size: 1.1rem;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+                text-decoration: none;
+                display: inline-block;
+                text-align: center;
+            }
+
+            .btn-primary {
+                background: linear-gradient(45deg, #667eea, #764ba2);
+                color: white;
+                box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            }
+
+            .btn-secondary {
+                background: linear-gradient(45deg, #764ba2, #667eea);
+                color: white;
+                box-shadow: 0 8px 25px rgba(118, 75, 162, 0.3);
+            }
+
+            .btn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            }
+
+            .btn::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+                transition: left 0.5s ease;
+            }
+
+            .btn:hover::before {
+                left: 100%;
+            }
+
+            /* Facts Section */
+            .facts-section {
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                padding: 3rem;
+                margin: 2rem 0;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            }
+
+            .facts-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+
+            .fact-item {
+                background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+                padding: 1.5rem;
+                border-radius: 15px;
+                border-left: 4px solid #667eea;
+                transition: all 0.3s ease;
+            }
+
+            .fact-item:hover {
+                transform: translateX(10px);
+                background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+            }
+
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                header {
+                    flex-direction: column;
+                    padding: 1.5rem 1rem;
+                }
+                
+                .logo-container {
+                    margin-bottom: 1rem;
+                }
+                
+                h1 {
+                    font-size: 2.5rem;
+                }
+                .main-container { padding: 1rem; }
+                .hero-section { padding: 2rem; }
+                .action-buttons { flex-direction: column; align-items: center; }
+                .cards-container { grid-template-columns: 1fr; }
+            }
+
+            /* Loading Animation */
+            .loading {
+                display: none;
+                text-align: center;
+                padding: 2rem;
+            }
+
+            .spinner {
+                width: 40px;
+                height: 40px;
+                border: 4px solid #f3f3f3;
+                border-top: 4px solid #667eea;
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
+                margin: 0 auto;
+            }
+
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Animated Background -->
+        <div class="bg-animation" id="bgAnimation"></div>
+
+        <header>
+            <div class="logo-container">
+                <img src="https://thumbs.dreamstime.com/z/water-logo-design-pure-water-logo-vector-inspiration-183507312.jpg" 
+                     alt="Water Logo" id="logo">
+            </div>
+            <div class="header-content">
+                <h1>Water Crisis Reporting Platform</h1>
+                <div class="header-subtitle">
+                    <i class="fas fa-exclamation-triangle"></i> Report water-related issues and help make a difference
+                </div>
+            </div>
+        </header>
+
+        <div class="main-container">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: #333;">
+                    <i class="fas fa-tint"></i> Water is Life
+                </h2>
+                <p class="hero-text">
+                    Water is the most essential resource for life on Earth. Every living being, 
+                    from humans to animals and plants, depends on water for survival. Without water, 
+                    life would not exist. It plays a crucial role in daily activities like drinking, 
+                    cooking, farming, and industry. However, water scarcity and pollution are becoming
+                    major global concerns. Conserving water and using it wisely is essential for a 
+                    sustainable future.
+                </p>
+                <img src="https://th.bing.com/th/id/R.862914c048e7616804743379d1c3e9c2?rik=wrNPlYxu3O4Fww&riu=http%3a%2f%2fwww.frugalandthriving.com.au%2fwp-content%2fuploads%2f2009%2f04%2fsave-water-at-home-1024x683.jpg&ehk=pxtL5dqr%2fJlakcUoXCXR8k%2bGIHoUlt2v1EfWMvtf5FQ%3d&risl=&pid=ImgRaw&r=0"
+                     alt="Water Conservation" class="hero-image" onclick="imageClick()">
+            </div>
+
+            <!-- Interactive Cards -->
+            <div class="cards-container">
+                <div class="info-card" onclick="cardClick('conservation')">
+                    <div class="card-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="card-title">Water Conservation</div>
+                    <div class="card-content">
+                        Learn about the importance of water conservation and discover practical ways 
+                        to save water in your daily life. Every drop counts!
+                    </div>
+                </div>
+
+                <div class="info-card" onclick="cardClick('pollution')">
+                    <div class="card-icon">
+                        <i class="fas fa-ban"></i>
+                    </div>
+                    <div class="card-title">Stop Pollution</div>
+                    <div class="card-content">
+                        Understand the devastating effects of water pollution and how we can work 
+                        together to protect our water sources.
+                    </div>
+                </div>
+
+                <div class="info-card" onclick="cardClick('awareness')">
+                    <div class="card-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="card-title">Raise Awareness</div>
+                    <div class="card-content">
+                        Join our community in raising awareness about water issues and reporting 
+                        problems in your area.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <a href="registration.html" class="btn btn-primary">
+                    <i class="fas fa-user-plus"></i> Register Now
+                </a>
+                <a href="login.html" class="btn btn-secondary">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+            </div>
+
+            <!-- Facts Section -->
+            <div class="facts-section">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 2rem; color: #333;">
+                    <i class="fas fa-chart-line"></i> Key Facts About Water
+                </h2>
+                <div class="facts-grid">
+                    <div class="fact-item">
+                        <h3><i class="fas fa-heart"></i> Essential for Life</h3>
+                        <p>All living beings—humans, animals, and plants—need water to survive and thrive.</p>
+                    </div>
+                    <div class="fact-item">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Limited Resource</h3>
+                        <p>Freshwater is finite. Growing populations and climate change are putting increasing pressure on water sources.</p>
+                    </div>
+                    <div class="fact-item">
+                        <h3><i class="fas fa-tree"></i> Vital for Ecosystems</h3>
+                        <p>Rivers, lakes, and wetlands support biodiversity and help regulate the climate.</p>
+                    </div>
+                    <div class="fact-item">
+                        <h3><i class="fas fa-industry"></i> Supports Agriculture</h3>
+                        <p>Water is used to grow food, generate electricity, and power industries.</p>
+                    </div>
+                    <div class="fact-item">
+                        <h3><i class="fas fa-shield-alt"></i> Health & Hygiene</h3>
+                        <p>Access to clean water is crucial for preventing diseases and maintaining good hygiene.</p>
+                    </div>
+                    <div class="fact-item">
+                        <h3><i class="fas fa-percentage"></i> Global Statistics</h3>
+                        <p>Only 3% of Earth's water is fresh, and less than 1% is easily accessible for human use.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Create animated background
+            function createWaterDrops() {
+                const bgAnimation = document.getElementById('bgAnimation');
+                for (let i = 0; i < 20; i++) {
+                    const drop = document.createElement('div');
+                    drop.className = 'water-drop';
+                    drop.style.left = Math.random() * 100 + '%';
+                    drop.style.animationDelay = Math.random() * 3 + 's';
+                    drop.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                    bgAnimation.appendChild(drop);
+                }
+            }
+
+            // Interactive functions
+            function logoClick() {
+                const logo = document.getElementById('logo');
+                logo.style.transform = 'scale(1.2) rotate(360deg)';
+                setTimeout(() => {
+                    logo.style.transform = 'scale(1) rotate(0deg)';
+                }, 500);
+            }
+
+            function imageClick() {
+                const image = document.querySelector('.hero-image');
+                image.style.transform = 'scale(1.1) rotate(5deg)';
+                setTimeout(() => {
+                    image.style.transform = 'scale(1) rotate(0deg)';
+                }, 300);
+            }
+
+            function cardClick(type) {
+                const cards = document.querySelectorAll('.info-card');
+                cards.forEach(card => {
+                    card.style.transform = 'scale(1)';
+                });
+                
+                const clickedCard = event.currentTarget;
+                clickedCard.style.transform = 'scale(1.05)';
+                
+                // Add some interactive feedback
+                const icon = clickedCard.querySelector('.card-icon i');
+                icon.style.transform = 'rotate(360deg)';
+                setTimeout(() => {
+                    icon.style.transform = 'rotate(0deg)';
+                }, 500);
+                
+                // Show different messages based on card type
+                const messages = {
+                    'conservation': '💧 Water conservation is key to our future!',
+                    'pollution': '🚫 Let\'s work together to stop water pollution!',
+                    'awareness': '🌟 Knowledge is power - spread the word!'
+                };
+                
+                showNotification(messages[type]);
+            }
+
+            function showNotification(message) {
+                const notification = document.createElement('div');
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: linear-gradient(45deg, #667eea, #764ba2);
+                    color: white;
+                    padding: 1rem 2rem;
+                    border-radius: 10px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                    z-index: 1000;
+                    transform: translateX(100%);
+                    transition: transform 0.3s ease;
+                `;
+                notification.textContent = message;
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.style.transform = 'translateX(0)';
+                }, 100);
+                
+                setTimeout(() => {
+                    notification.style.transform = 'translateX(100%)';
+                    setTimeout(() => {
+                        document.body.removeChild(notification);
+                    }, 300);
+                }, 3000);
+            }
+
+            // Initialize animations
+            document.addEventListener('DOMContentLoaded', function() {
+                createWaterDrops();
+                
+                // Add scroll animations
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, observerOptions);
+                
+                // Observe all cards and sections
+                document.querySelectorAll('.info-card, .fact-item').forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(30px)';
+                    el.style.transition = 'all 0.6s ease';
+                    observer.observe(el);
+                });
+            });
+
+            // Add smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
+
